@@ -12,9 +12,9 @@ var saveBtn = $(".saveBtn")
 function timeBlockColor() {
     var hour = moment.hours();
     
-    $(".time-block").search(function() {
+    $(".row time-block").search(function() {
 
-        var currentHour = parseInt($(this).attr(".id"));
+        var currentHour = parseInt($(this).attr('id'));
 
         if (currentHour > hour) {
             $(this).addClass("future");
