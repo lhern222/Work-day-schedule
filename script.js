@@ -10,20 +10,20 @@ var saveBtn = $(".saveBtn")
 //color coding each block based on past, present, future
 
 function timeBlockColor() {
-    var hour = moment.hours();
-    
-    $(".row time-block").search(function() {
 
-        var currentHour = parseInt($(this).attr('id'));
+    for (var hour = 8; hour <= 17; hour++)
+        var timeBlock = $(".time-block").eq(hour - 8);
 
         if (currentHour > hour) {
-            $(this).addClass("future");
+            timeBlock.addClass("future");
 
         } else if (currentHour === hour) {
-            $(this).addClass("present");
+            timeBlock.addClass("present");
 
         } else {
-            $(this).addClass("past");
+            timeBlock.addClass("past");
         }
-    })
+    
 };
+
+timeBlockColor();
