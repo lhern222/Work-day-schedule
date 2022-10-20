@@ -1,8 +1,29 @@
 //current date to calender 
-var a = moment('2022-10-19');
-a.format();
 
-var todayDate = moment().format();
+var todayDate = moment().format('ddd, MMM Do YYYY');
 $("#currentDate").html(todayDate);
 
+//create a saveBtn
 
+var saveBtn = $(".saveBtn")
+
+//color coding each block based on past, present, future
+
+function timeBlockColor() {
+    var hour = moment.hours();
+    
+    $(".time-block").search(function() {
+
+        var currentHour = parseInt($(this).attr(".id"));
+
+        if (currentHour > hour) {
+            $(this).addClass("future");
+
+        } else if (currentHour === hour) {
+            $(this).addClass("present");
+
+        } else {
+            $(this).addClass("past");
+        }
+    })
+};
