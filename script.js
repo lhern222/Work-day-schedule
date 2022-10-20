@@ -1,6 +1,8 @@
 //current date to calender 
-var a = todayDate('10/19/2022');
+var a = moment('2022-10-19');
+a.format();
 
-var todayDate = moment("01/12/2016", "DD/MM/YYYY", true).format();
-$("#currentDay").html(todayDate);
+var todayDate = moment().format();
+$("#currentDate").html(todayDate);
+
 
