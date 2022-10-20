@@ -7,6 +7,8 @@ $("#currentDate").html(todayDate);
 
 var saveBtn = $(".saveBtn")
 
+var currentHour = parseInt($(this).attr("id"));
+
 //color coding each block based on past, present, future
 
 function timeBlockColor() {
